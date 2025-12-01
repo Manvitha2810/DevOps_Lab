@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Registration</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 24px; max-width:420px; margin:auto; }
+    label { display:block; margin-top:10px; font-size:14px; }
+    input { width:100%; padding:8px; box-sizing:border-box; margin-top:4px; }
+    button { margin-top:14px; padding:8px 12px; }
+    .error { color:#b00020; font-size:13px; margin-top:6px; }
+  </style>
+</head>
+<body>
+  <h2>Register</h2>
+
+  <form id="regForm" onsubmit="return handleSubmit(event)">
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" required />
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" required minlength="6" />
+
+    <label for="confirm">Confirm Password</label>
+    <input id="confirm" name="confirm" type="password" required minlength="6" />
+
+    <div id="err" class="error" aria-live="polite"></div>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <script>
+    function handleSubmit(e){
+      e.preventDefault();
+      const u = document.getElementById('username').value.trim();
+      const p = document.getElementById('password').value;
+      const c = document.getElementById('confirm').value;
+      const err = document.getElementById('err');
+      err.textContent = '';
+      if (!u) { err.textContent = 'Enter a username.'; return false; }
+      if (p.length < 6) { err.textContent = 'Password must be at least 6 characters.'; return false; }
+      if (p !== c) { err.textContent = 'Passwords do not match.'; return false; }
+      alert('Registered — username: ' + u);
+      document.getElementById('regForm').reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order Form</title>
+     <style>
+    body { font-family: Arial, sans-serif; padding: 24px; max-width:420px; margin:auto; }
+    label { display:block; margin-top:10px; font-size:14px; }
+    input { width:100%; padding:8px; box-sizing:border-box; margin-top:4px; }
+    button { margin-top:14px; padding:8px 12px; }
+    .error { color:#b00020; font-size:13px; margin-top:6px; }
+  </style>
+</head>
+<body>
+    <form id="pizzaform">
+        <label for="pizza_name">Pizza Name</label>
+        <input type="text" id="pizza_name" name="pizza_name">
+        <label for="pizza_size">Pizza Size(Small, Medium, Large)</label>
+        <input type="text" id="pizza_size" name="pizza_size">
+        <label for="pizza_toppings">Pizza Toppings</label>
+        <input type="text" id="pizza_top" name="pizza_top">
+        <button>Order</button>
+    </form>
+</body>
+</html>

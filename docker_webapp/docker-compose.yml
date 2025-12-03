@@ -1,0 +1,6 @@
+version: '3.8'
+services: 
+  docker-webapp:
+    build: .
+    ports: 
+      - "8050:80"
